@@ -18,14 +18,14 @@ namespace StudentsApp.BLL.Tests
             var studentRepo = new Mock<IStudentRepository>(MockBehavior.Strict);
             var dbCollection = new Dictionary<int, Student>
             {
-                [26] = new Student
+                [5] = new Student
                 {
-                    Id = 26,
+                    Id = 5,
                     Name = "Delete Group"
                 },
-                [27] = new Student
+                [6] = new Student
                 {
-                    Id = 27,
+                    Id = 6,
                     Name = "Group"
                 }
             };
@@ -48,7 +48,7 @@ namespace StudentsApp.BLL.Tests
             var service = new StudentService(unitOfWork.Object);
             var student = new Student
             {
-                Id = 28,
+                Id = 7,
                 Name = "New Group"
             };
 

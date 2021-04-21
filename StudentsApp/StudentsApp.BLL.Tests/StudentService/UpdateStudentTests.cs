@@ -19,14 +19,14 @@ namespace StudentsApp.BLL.Tests
             var studentRepo = new Mock<IStudentRepository>(MockBehavior.Strict);
             var dbCollection = new Dictionary<int, Student>
             {
-                [26] = new Student
+                [5] = new Student
                 {
-                    Id = 26,
+                    Id = 5,
                     Name = "Delete Group"
                 },
-                [27] = new Student
+                [6] = new Student
                 {
-                    Id = 27,
+                    Id = 6,
                     Name = "Group"
                 }
             };
@@ -54,10 +54,10 @@ namespace StudentsApp.BLL.Tests
             };
         
             // Act
-            await service.UpdateStudent(27, student);
+            await service.UpdateStudent(6, student);
             
             // Assert
-            Assert.AreEqual((await unitOfWork.Object.Students.GetByIdAsync(27)).Name, student.Name);
+            Assert.AreEqual((await unitOfWork.Object.Students.GetByIdAsync(6)).Name, student.Name);
         }
         
         [Test]
@@ -72,7 +72,7 @@ namespace StudentsApp.BLL.Tests
             };
             
             // Act + Assert
-            Assert.ThrowsAsync<InvalidDataException>(async () => await service.UpdateStudent(27, student));
+            Assert.ThrowsAsync<InvalidDataException>(async () => await service.UpdateStudent(6, student));
         }
         
         [Test]

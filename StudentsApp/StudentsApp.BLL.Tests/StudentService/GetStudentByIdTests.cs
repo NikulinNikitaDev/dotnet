@@ -17,14 +17,14 @@ namespace StudentsApp.BLL.Tests
             var studentRepo = new Mock<IStudentRepository>(MockBehavior.Strict);
             var dbCollection = new Dictionary<int, Student>
             {
-                [26] = new Student
+                [5] = new Student
                 {
-                    Id = 26,
+                    Id = 5,
                     Name = "Delete Group"
                 },
-                [27] = new Student
+                [6] = new Student
                 {
-                    Id = 27,
+                    Id = 6,
                     Name = "Group"
                 }
             };
@@ -46,10 +46,10 @@ namespace StudentsApp.BLL.Tests
             var service = new StudentService(unitOfWork.Object);
 
             // Act
-            var student = await service.GetStudentById(27);
+            var student = await service.GetStudentById(6);
             
             // Assert
-            Assert.AreEqual(student, dbCollection[27]);
+            Assert.AreEqual(student, dbCollection[6]);
         }
         
         [Test]

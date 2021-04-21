@@ -48,7 +48,7 @@ namespace StudentsApp.BLL
             if (!await _unitOfWork.Marks.IsExists(id))
                 throw new NullReferenceException();
             
-            if (mark.Grade <= 2 || mark.Grade > 5 || mark.StudentId <= 0)
+            if (mark.Grade < 2 || mark.Grade > 5 || mark.StudentId <= 0)
                 throw new InvalidDataException();
             
             var markToBeUpdated = await GetMarkById(id);

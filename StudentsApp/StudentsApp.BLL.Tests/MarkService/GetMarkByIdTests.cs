@@ -18,30 +18,30 @@ namespace StudentsApp.BLL.Tests
             var studentRepo = new Mock<IStudentRepository>(MockBehavior.Strict);
             var dbCollectionMark = new Dictionary<int, Mark>
             {
-                [26] = new Mark
+                [5] = new Mark
                 {
-                    Id = 26,
-                    StudentId = 26,
+                    Id = 5,
+                    StudentId = 5,
                     Grade = 2
                 },
-                [27] = new Mark
+                [6] = new Mark
                 {
-                    Id = 27,
-                    StudentId = 27,
+                    Id = 6,
+                    StudentId = 6,
                     Grade = 2
                 }
             };
             
             var dbCollectionStudents = new Dictionary<int, Student>
             {
-                [26] = new Student
+                [5] = new Student
                 {
-                    Id = 26,
+                    Id = 6,
                     Name = "Teacher"
                 },
-                [27] = new Student
+                [6] = new Student
                 {
-                    Id = 27,
+                    Id = 6,
                     Name = "Other teacher"
                 }
             };
@@ -67,10 +67,10 @@ namespace StudentsApp.BLL.Tests
             var service = new MarkService(unitOfWork.Object);
 
             // Act
-            var mark = await service.GetMarkById(27);
+            var mark = await service.GetMarkById(6);
             
             // Assert
-            Assert.AreEqual(mark, dbCollectionMark[27]);
+            Assert.AreEqual(mark, dbCollectionMark[6]);
         }
         
         [Test]

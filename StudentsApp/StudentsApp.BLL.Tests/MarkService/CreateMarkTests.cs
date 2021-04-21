@@ -18,16 +18,16 @@ namespace StudentsApp.BLL.Tests
             var markRepo = new Mock<IMarkRepository>(MockBehavior.Strict);
             var dbCollection = new Dictionary<int, Mark>
             {
-                [26] = new Mark
+                [5] = new Mark
                 {
-                    Id = 26,
-                    StudentId = 26,
+                    Id = 5,
+                    StudentId = 5,
                     Grade = 2
                 },
-                [27] = new Mark
+                [6] = new Mark
                 {
-                    Id = 27,
-                    StudentId = 27,
+                    Id = 6,
+                    StudentId = 6,
                     Grade = 2
                 }
             };
@@ -50,7 +50,7 @@ namespace StudentsApp.BLL.Tests
             var service = new MarkService(unitOfWork.Object);
             var mark = new Mark
             {
-                Id = 28,
+                Id = 7,
                 Grade = 2
             };
 
